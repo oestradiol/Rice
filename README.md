@@ -1,9 +1,10 @@
 # My dotfiles
 ## An updated, revised and personalised version of two other rices I like.
-### The rices in question are [dots-2.0](https://github.com/ikz87/dots-2.0) from cutie ikz87 and [Emily and Katie's dotfiles](https://github.com/egirldevs/dotfiles). 
+### The rices in question are [dots-2.0](https://github.com/ikz87/dots-2.0) from cutie ikz87 and Emily and Katie's [dotfiles](https://github.com/egirldevs/dotfiles). 
 
 1- The profile picture shown in the lockscreen can be changed by putting the desired image in `~/.face`.
 2- If you wanna use the neofetch like I did, just add this to your .bashrc, .zshrc or whatever: `alias neofetch='hyfetch --ascii ~/Ricing/Configs/neofetch/uwufetch'`. You can also change the ASCII in that file if you want.
+3- The neofetch has the CPU and GPU info hardcoded to load faster. Remember to update it with your info!
 
 Please note that this rice was made for a single 1920x1080 monitor setup, If you have anything different than that you *might* have to tweak a thing or two on your own. Don't think you should come across much tho, hopefully. 
 
@@ -72,4 +73,9 @@ Since the install script now uses symbolic links instead of copied files, all yo
 ## Keybinds
 These are many keybinds set in the `~/.config/bspwm/sxhkdrc` file. If you are gonna use this, I strongly recommend that you change those for your own or at least take your time to thorougly study the more important ones.
 
-Media keys should also work for controlling play/pause and changing volume.
+## Preview
+Here's a cool preview video:
+
+
+https://github.com/oestradiol/Rice/assets/48662592/bad9c4b7-9183-40a8-a41d-eb674098b9cb
+
