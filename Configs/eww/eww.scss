@@ -1,0 +1,86 @@
+$white: #ffffff;
+$violet-dark: #2c0223;
+$blue-alt: #5294ff;
+$purple-alt: #dda2ff;
+$red-alt: #fcb1d7;
+
+* {
+	font-family: "Work Sans", "Cousine Nerd Font", serif;
+	border-color: transparent;
+	border-width: 0;
+	outline-width: 0;
+	-gtk-icon-theme: "NordArc-Icons";
+}
+
+// Windows
+
+.eww-bar, .power, .calendar {
+	background-color: transparent;
+}
+
+// Global container
+
+.container {
+	margin: 12px 2.5px;
+	padding: 5px 5px;
+	background-color: $violet-dark;
+	border-radius: 10px;
+}
+
+.center-box {
+    margin: 0px 15px 15px 15px;
+}
+
+// Global button with text
+
+.text-button, calendar {
+  padding: 1px 6px 1px 3px;
+  background-color: $violet-dark;
+}
+
+// Volume & Media Revealer
+
+.volume-revealer, .media-revealer {
+	background-color: $violet-dark;
+	padding: 0px 9px 0px 6px;
+	revealer box {
+		label {
+			margin: 0px 5px;
+		}
+	}
+}
+
+.media-revealer-icons {
+	color: #d6e6ff;
+}
+
+// System Information
+
+.blob {
+	margin: 0px 2.5px;
+	padding: 0px 2.5px;
+	color: $violet-dark;
+	border-radius: 5px;
+}
+
+.disk {
+	background-color: $blue-alt;
+}
+
+.temperature  {
+	background-color: $purple-alt;
+}
+
+.memory  {
+	background-color: $red-alt;
+}
+
+// Font
+
+.large-font {
+	font-size: 12pt;
+}
+
+.text-and-icons {
+	color: $white;
+}

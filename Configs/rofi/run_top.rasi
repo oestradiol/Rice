@@ -1,0 +1,12 @@
+configuration {
+  location: 1;
+  xoffset: 15;
+  yoffset: 50;
+}
+
+@theme "~/.config/rofi/run_base.rasi"
+
+window {
+  border: 0;
+  border-radius: 0 0 10 10;
+}

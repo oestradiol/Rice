@@ -1,0 +1,277 @@
+## Ctrl + Shift
+
+# Move windows in workspace
+ctrl+shift+{w,s,a,d}
+	play -v 0.4 ~/.config/rice_assets/Sounds/tile.wav& ~/.bscripts/bsmove.sh {north,south,west,east}
+	
+
+
+
+
+## Ctrl + Super
+
+# Select windows in workspace
+ctrl+super+{w,s,a,d}
+	~/.bscripts/bselect.sh {north,south,west,east}
+
+
+
+
+
+## Ctrl + Alt
+
+# Preselect direction for next window
+ctrl+alt+{w,s,a,d}
+	bspc node --presel-dir \~{north,south,west,east}
+
+# Cancel preselection
+ctrl+alt+space
+    bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+
+
+
+
+## Super + Shift
+
+# Grow windows
+super+shift+d
+	bspc node focused -z right 15 0
+super+shift+a
+	bspc node focused -z left -15 0
+super+shift+w
+	bspc node focused -z top 0 -15
+super+shift+s
+	bspc node focused -z bottom 0 15
+
+# Move window to the next/previous workspace
+super+shift+{q,e}
+	~/.bscripts/move_windows.sh move {-1,+1}
+
+
+
+
+
+## Super + Alt
+
+# -
+
+
+
+
+
+## Alt + Shift
+
+# Shrink windows
+alt+shift+d
+	bspc node focused -z right -15 0
+alt+shift+a
+	bspc node focused -z left 15 0
+alt+shift+w
+	bspc node focused -z top 0 15
+alt+shift+s
+	bspc node focused -z bottom 0 -15
+
+# Go to the next workspace
+alt+shift+{q,e}
+	~/.bscripts/move_windows.sh select {-1,+1}
+
+# Color picker
+alt+shift+c
+	echo -n	`colorpicker --short --one-shot` | xclip -selection "clipboard"
+
+# Close window
+alt+shift+r
+	wmctrl -c `xdotool getwindowfocus` -i
+
+
+
+
+
+# Ctrl
+
+# Go to workspaces 1 through 9
+ctrl+{1,2,3,4,5,6,7,8,9}
+	~/.bscripts/move_windows.sh jump {0,1,2,3,4,5,6,7,8}
+
+
+
+
+
+# Super
+
+# Open web browser
+super+b
+	firefox
+
+# Open file manager
+super+f
+	thunar
+
+# Open terminal
+super+t
+	kitty
+
+# Open Rofi run commands
+super+r
+	~/.bscripts/rofi.sh run
+
+# Open Rofi launch apps
+super+a
+	~/.bscripts/rofi.sh drun
+
+# Open Spotify
+super+s
+	spotify
+
+# Open Discord
+super+d
+	discord
+    #gio launch /mnt/shareddata/Elaina/Desktop/chrome-cimffglfgellmnadhbmfanlpkfophkpo-Default.desktop
+
+# Suspend the pc
+super+o
+	~/.bscripts/lock.sh
+
+# Rofi logout options
+super+k
+    ~/.bscripts/rofi.sh outopts
+
+# Rotate tree
+super+{q,e}
+	play -v 0.4 ~/.config/rice_assets/Sounds/tile.wav& bspc node @/ -C {backward,forward}
+
+# Raise window gap by 5px
+super+KP_Add
+	bspc config window_gap $(( 5 + `bspc config window_gap` ))
+
+# Lower window gap by 5px
+super+KP_Subtract
+	bspc config window_gap $(( -5 + `bspc config window_gap` ))
+
+# "Pausing" sxhkd
+super+Return
+ 	killall sxhkd && sxhkd -c ~/.config/bspwm/hkpause& dunstify "Paused simple X hotkey daemon" -i ~/.config/rice_assets/Icons/stop.png -t 1500 --replace=420 -u critical&
+
+# Reload sxhkd configs
+super+Escape
+	killall sxhkd && sxhkd -c ~/.config/bspwm/sxhkdrc&
+
+# Delayed screenshot
+super+Print
+    sleep 3 && ~/.bscripts/ss.sh
+
+# Rofi open emoji selector
+super + period
+    ~/.bscripts/rofi.sh emoji
+
+# Rofi open clipboard history
+super + v
+    ~/.bscripts/rofi.sh clipboard
+
+
+
+
+
+# Alt
+
+# Rotate windows 
+alt+{q,e}
+	play -v 0.4 ~/.config/rice_assets/Sounds/tile.wav& bspc node first_ancestor -R {90,270}
+
+# Rofi window switcher
+alt+Tab
+	~/.bscripts/rofi.sh window
+
+# Kill window (for frozen apps)
+alt+F4 
+	xdotool getwindowfocus windowclose
+
+# Equalize window sizes
+alt+a
+	play -v 0.4 ~/.config/rice_assets/Sounds/tile.wav& bspc node first_ancestor --balance
+    
+# Cycle layouts (tiled and monocle)
+alt+s
+    bspc desktop focused --layout next
+
+# Toggle floating windows
+alt+f
+	~/.bscripts/toggle_winprops.sh float
+
+# Toggle fullscreen
+alt+g
+	~/.bscripts/toggle_winprops.sh fullscreen
+
+# Cycle through window layers (above, normal or below)
+alt+h
+	~/.bscripts/toggle_winprops.sh layer
+
+# Eww toggle bar 
+alt+b
+	~/.bscripts/toggle_bar.sh auto
+
+# Eww music popup
+alt+m
+	~/.config/eww/mybar/scripts/popup_music
+
+# Toggle picom
+# alt+p
+#     [[ `pgrep -c picom` -eq 0 ]] && picom || killall picom
+
+
+
+
+
+
+# Utilities
+
+# Screenshot
+Print
+	flameshot gui
+# Print
+# 	~/.bscripts/ss.sh
+
+# Full screenshot
+Print+shift
+    ~/.bscripts/ss.sh
+
+
+
+
+
+# Media controls
+
+# Raise the volume by 5%
+# alt+period
+# 	~/.bscripts/volume.sh up
+XF86AudioRaiseVolume
+    ~/.bscripts/volume.sh up
+
+# Lower the volume by 5%
+# alt+comma 
+# 	~/.bscripts/volume.sh down
+XF86AudioLowerVolume
+    ~/.bscripts/volume.sh down
+
+# Toggle mute
+# alt+m
+# 	~/.bscripts/volume.sh mute 
+XF86AudioMute
+    ~/.bscripts/volume.sh mute
+
+# Toggle media playing
+Pause
+	playerctl play-pause
+XF86AudioPlay
+	playerctl play-pause
+XF86AudioPause 
+	playerctl play-pause
+
+# Go to next media content
+XF86AudioNext
+	playerctl next
+
+# Go to previous media content
+XF86AudioPrev
+	playerctl previous

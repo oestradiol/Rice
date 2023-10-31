@@ -1,0 +1,37 @@
+#!/bin/sh
+
+~/.config/bspwm/quit
+
+# Compositor
+picom --animations &
+
+# Set Wallpaper
+#feh --bg-scale $bg_img &
+komorebi &
+
+# Cava
+kitty -o window_padding_width=0 -o background_opacity=0 --class "kitty-cava" sh -c cava &
+~/.bscripts/process_cava.sh &
+
+# Bar
+eww open eww-bar > /dev/null &
+
+# Other
+# exec trayer --edge bottom --align right --height 15 --width 15 --SetDockType true --transparent true --widthtype request --alpha 256 --margin 15 &
+
+# Cache lockscreen
+komorebi_folder=$HOME/.config/komorebi
+bg_img=$komorebi_folder/wallpapers/$(grep 'WallpaperName=' $komorebi_folder/komorebi.prop | sed 's/.*=//')/wallpaper.jpg
+mantablockscreen -i $bg_img & # Using the same as the current bg
+
+# Daemons
+dunst > /dev/null 2> /dev/null &
+thunar --daemon &
+greenclip daemon &
+sxhkd -c ~/.config/bspwm/sxhkdrc > /dev/null 2> /dev/null &
+
+# Window event monitoring
+~/.bscripts/winevents.sh &
+
+# Autosuspend
+~/.bscripts/idle.sh > /dev/null 2> /dev/null &

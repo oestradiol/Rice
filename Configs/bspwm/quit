@@ -1,0 +1,26 @@
+#!/bin/sh
+
+kill_and_wait () {
+    if [[ `pgrep -c "$1"` -gt 0 ]]
+    then
+        killall "$1"
+        while [[ `pgrep -c "$1"` -gt 0 ]];
+        do
+            sleep 0.1
+        done;
+    fi;
+}
+
+kill_and_wait idle.sh
+kill_and_wait winevents.sh
+kill_and_wait sxhkd
+kill_and_wait greenclip
+kill_and_wait thunar
+kill_and_wait dunst
+kill_and_wait mantablockscreen
+kill_and_wait trayer
+kill_and_wait eww
+kill_and_wait cava
+kill_and_wait komorebi
+kill_and_wait feh
+kill_and_wait picom
