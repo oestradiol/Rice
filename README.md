@@ -1,6 +1,6 @@
 # My dotfiles
 ## An updated, revised and personalised version of two other rices I like.
-### The rices in question are [dots-2.0](https://github.com/ikz87/dots-2.0) from cutie ikz87 and Emily and Katie's [dotfiles](https://github.com/egirldevs/dotfiles). 
+### The rices in question are [dots-2.0](https://github.com/ikz87/dots-2.0) from cutie ikz87 (most scripts) and Emily and Katie's [dotfiles](https://github.com/egirldevs/dotfiles) (mainly the eww bar). 
 
 1. The profile picture shown in the lockscreen can be changed by putting the desired image in `~/.face`. <br>
 2. If you wanna use the neofetch like I did, just add this to your .bashrc, .zshrc or whatever: `alias neofetch='hyfetch --ascii ~/Ricing/Configs/neofetch/uwufetch'`. You can also change the ASCII in that file if you want. <br>
