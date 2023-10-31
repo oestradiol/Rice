@@ -1,0 +1,26 @@
+(include "./container.yuck")
+
+(defpoll internet :interval "2s"
+  :initial "1" 
+  "./scripts/internet.sh"
+)
+
+(defwidget system_info []
+  (container
+    (label
+      :text "󱛟 /: ${round(EWW_DISK["/"].used_perc, 0)}%"
+      :class "blob disk"
+      :xalign 0.5
+    )
+    (label
+      :text "󰍛 ${round(EWW_CPU.avg, 0)}%, ${round(EWW_TEMPS["K10TEMP_TCTL"], 0)}°"
+      :class "blob temperature"
+      :xalign 0.5
+    )
+    (label
+      :text "  ${round(EWW_RAM.used_mem_perc, 0)}%"
+      :class "blob memory"
+      :xalign 0.5
+    )
+  )
+)

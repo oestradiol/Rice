@@ -1,0 +1,16 @@
+(include "./container.yuck")
+
+(defpoll playing :interval "0.1s" 'playerctl metadata --format "{{status}}"')
+
+(defwidget playerctrl []
+  (container
+    :class "media"
+    (button :onclick "playerctl previous" :class "text-button text-and-icons" "󰒮" )
+    (button 
+      :class "text-button text-and-icons"
+      :onclick "playerctl play-pause" 
+      {playing == "Playing" ? "" : ""}
+    )
+    (button :onclick "playerctl next" :class "text-button text-and-icons" "󰒭")
+  )
+)

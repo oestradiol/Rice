@@ -1,0 +1,12 @@
+(include "./container.yuck")
+
+(defwidget launcher []
+  (container
+    (button
+      :class "text-button text-and-icons"
+      :timeout "100s"
+      :onclick "$HOME/.bscripts/rofi.sh drun 1"
+      ""
+    )
+  )
+)

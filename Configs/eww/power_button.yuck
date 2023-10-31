@@ -1,0 +1,11 @@
+(include "./container.yuck")
+
+(defwidget power_button []
+  (container
+    (button
+      :class "text-button text-and-icons"
+      :onclick "$HOME/.bscripts/rofi.sh outopts"
+      ""
+    )
+  )
+)

@@ -1,0 +1,33 @@
+(include "./container.yuck")
+
+(defvar shown false)
+(defpoll volume :interval "1s" "playerctl volume")
+
+(defwidget volume_revealer []
+  (eventbox
+    :onhover "${EWW_CMD} update shown=true"
+    :onhoverlost "${EWW_CMD} update shown=false"
+    (box
+      :class "container volume-revealer"
+      :space-evenly false
+      (revealer
+        :transition "slideleft"
+        :reveal shown
+        (scale
+          :round-digits "0"
+          :name "Volume"
+          :min "0f"
+          :max "101f"
+          :hexpand true
+          :width "100"
+          :value {volume*100}
+          :onchange "playerctl volume `printf %.2f \"{}e-2\"`"
+        )
+      )
+      (box
+        :class "text-and-icons text-button"
+        {volume == 0 ? "" : ""}
+      )
+    )
+  )
+)
