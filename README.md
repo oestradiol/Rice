@@ -2,15 +2,15 @@
 ## An updated, revised and personalised version of two other rices I like.
 ### The rices in question are [dots-2.0](https://github.com/ikz87/dots-2.0) from cutie ikz87 and Emily and Katie's [dotfiles](https://github.com/egirldevs/dotfiles). 
 
-1- The profile picture shown in the lockscreen can be changed by putting the desired image in `~/.face`.
-2- If you wanna use the neofetch like I did, just add this to your .bashrc, .zshrc or whatever: `alias neofetch='hyfetch --ascii ~/Ricing/Configs/neofetch/uwufetch'`. You can also change the ASCII in that file if you want.
-3- The neofetch has the CPU and GPU info hardcoded to load faster. Remember to update it with your info!
+1. The profile picture shown in the lockscreen can be changed by putting the desired image in `~/.face`. <br>
+2. If you wanna use the neofetch like I did, just add this to your .bashrc, .zshrc or whatever: `alias neofetch='hyfetch --ascii ~/Ricing/Configs/neofetch/uwufetch'`. You can also change the ASCII in that file if you want. <br>
+3. The neofetch has the CPU and GPU info hardcoded to load faster. Remember to update it with your info!
 
 Please note that this rice was made for a single 1920x1080 monitor setup, If you have anything different than that you *might* have to tweak a thing or two on your own. Don't think you should come across much tho, hopefully. 
 
 ## Dependency list:
 ### AUR packages
-**Disclaimer:** I did not test this on another machine after I finished it on mine. There's a strong possibility that I forgot one or two dependencies. If you come across this and find something missing, please contact me so I update it here.
+_**Disclaimer:** I did not test this on another machine after I finished it on mine. There's a strong possibility that I forgot one or two dependencies. If you come across this and find something missing, please contact me so I update it here._
 
 Just run this for this section (assuming you use yay):
 ```
@@ -52,7 +52,7 @@ Run install.sh:
 chmod +x install.sh
 ./install.sh
 ```
-*Disclaimer: While this script does attempt to create a backup of all files that will be rewritten and asks what to do when a backup already exists, I do not take responsibility for any lost config files as consequence of running this script. You are strongly advised to read the insides of the script before running.*
+_Disclaimer: While this script does attempt to create a backup of all files that will be rewritten and asks what to do when a backup already exists, I do not take responsibility for any lost config files as consequence of running this script. You are strongly advised to read the insides of the script before running._
 
 The install script should do the following changes to your files:
 1. Move every file/folder that will be changed to `Old_Rice` (same folder as the repo) in an attempt to create a backup
