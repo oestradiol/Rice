@@ -63,7 +63,7 @@ Besides that, there are a few things to notice:
 3. The neofetch has the CPU and GPU info hardcoded to load faster. Remember to update it with your info!
 
 The install script should do the following changes to your files:
-1. Move every file/folder that will be changed to `Old_Rice` (same folder as the repo) in an attempt to create a backup
+1. Move every file/folder that will be changed to `Old_Rice` (in the same folder as the repo) in an attempt to create a backup
 2. Link every folder/file in `Configs` to `~/.config/<folder/file>`
 3. Link `Assets` to `~/.config/rice_assets`
 4. Link `Scripts` to `~/.bscripts`
