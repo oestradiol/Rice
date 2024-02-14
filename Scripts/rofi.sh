@@ -43,7 +43,7 @@ case $1 in
             ;;
             "")
                 confirm=`printf "Confirm reboot" | rofi -config $roficonf/logout.rasi -dmenu -font "Iosevka Curly 16"`
-            [[ $confirm == "Confirm reboot" ]] && reboot
+                [[ $confirm == "Confirm reboot" ]] && reboot
             ;;
             "⏻")
                 confirm=`printf "Confirm shut down" | rofi -config $roficonf/logout.rasi -dmenu -font "Iosevka Curly 16"`

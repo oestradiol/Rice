@@ -3,7 +3,7 @@
 (defwindow calendar
   :monitor 0
   :geometry (geometry :x "-67"
-              :y "50px"
+              :y "42px"
               :width "450px"
               :height "200px"
               :anchor "top right")
