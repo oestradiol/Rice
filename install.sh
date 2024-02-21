@@ -72,6 +72,19 @@ done
 ln -s -f -T $script_dir/Assets $HOME/.config/rice_assets
 ln -s -f -T $script_dir/Fonts $HOME/.local/share/fonts
 ln -s -f -T $script_dir/Scripts $HOME/.bscripts
+
+# Zsh
+if [ -e $HOME/.zshrc ]; then
+  mv -f $HOME/.zshrc $script_dir/Other/.zshrc
+fi
+ln -s -f $script_dir/Other/.zshrc $HOME/
+
+# Profile picture
+if [ -e $HOME/.face ]; then
+  mv -f $HOME/.face $script_dir/Other/.face
+fi
+ln -s -f $script_dir/Other/.face $HOME/
+
 echo "Done"
 
 echo -n "Changing script permissions... "
