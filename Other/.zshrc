@@ -15,7 +15,7 @@ ZSH_THEME="alanpeabody"
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 
-source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+source ~/Rice/Other/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 export DEFAULT_USER="elaina"
 export TERM="xterm-256color"

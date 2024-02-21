@@ -17,7 +17,7 @@ _**Disclaimer:** I did not test this on another machine after I finished it on m
 
 Just run this for this section (assuming you use yay):
 ```
-yay -Sy --needed bspwm cava colorpicker dunst eww flameshot hyfetch kitty komorebi lxappearance mantablockscreen picom-ftlabs-git playerctl rofi rofi-emoji rofi-greenclip rose-pine-gtk-theme sox sxhkd noto-fonts-emoji ttf-cousine-nerd ttf-work-sans ttf-fantasque-nerd ttc-iosevka-curly ttf-cascadia-code-nerd wmctrl xclip xdotool qt5ct
+yay -Sy --needed bspwm cava colorpicker dunst eww flameshot hyfetch kitty komorebi gst-libav gst-plugins-good lxappearance mantablockscreen picom-ftlabs-git playerctl rofi rofi-emoji rofi-greenclip rose-pine-gtk-theme sox sxhkd noto-fonts-emoji ttf-cousine-nerd ttf-work-sans ttf-fantasque-nerd ttc-iosevka-curly ttf-cascadia-code-nerd wmctrl xclip xdotool qt5ct
 ```
 If you're not using arch, this is the dependency list, install in wathever way you want:
 - bspwm - Window manager
@@ -29,6 +29,8 @@ If you're not using arch, this is the dependency list, install in wathever way y
 - hyfetch - Colored LGBT+ neofetch
 - kitty - Terminal
 - komorebi - Video background, can be substituted for feh if you don't want that, can be quite heavy 
+- gst-libav - Komorebi dependency for video bgs
+- gst-plugins-good - Komorebi dependency for video bgs
 - lxappearance - Theming
 - qt5ct - Theming
 - rose-pine-gtk-theme - Theming
