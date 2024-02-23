@@ -132,7 +132,7 @@ super+s
 
 # Open Discord
 super+d
-	discord-canary
+	discord-ptb
     #gio launch /mnt/shareddata/Davi/Desktop/chrome-cimffglfgellmnadhbmfanlpkfophkpo-Default.desktop
 
 # Suspend the pc

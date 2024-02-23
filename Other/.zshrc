@@ -55,6 +55,8 @@ alias neofetch='hyfetch --ascii ~/Rice/Configs/neofetch/uwufetch'
 
 # source /usr/share/nvm/init-nvm.sh
 
+eval "$(starship init zsh)"
+
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
 export PATH=/usr/local/sbin
