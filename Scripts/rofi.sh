@@ -34,14 +34,14 @@ case $1 in
         option=`printf " \n\n \n⏻\n" | \
         rofi -config $roficonf/logout.rasi -dmenu -p "Select logout" -font "Caskaydia Cove Nerd Font 18"`
         case $option in
-            "")
+            " ")
                 bspc wm -r
             ;;
             "")
                 ~/.config/bspwm/quit
                 bspc quit
             ;;
-            "")
+            " ")
                 confirm=`printf "Confirm reboot" | rofi -config $roficonf/logout.rasi -dmenu -font "Iosevka Curly 16"`
                 [[ $confirm == "Confirm reboot" ]] && reboot
             ;;

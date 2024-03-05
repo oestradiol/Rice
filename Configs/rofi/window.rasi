@@ -5,8 +5,8 @@ configuration {
   modi: "window,run,drun";
   show-icons: true;
   location: 1;
-  xoffset: 2;
-  yoffset: 50;
+  xoffset: 10;
+  yoffset: 48;
   kb-accept-entry: "!Alt-Tab,!Alt_L,!Alt+Alt_L,Return";
   kb-row-down: "Alt+Tab";
   selected-row: 1;

@@ -1,6 +1,6 @@
 configuration {
   location: 1;
-  xoffset: 15;
+  xoffset: 10;
   yoffset: 48;
 }
 
