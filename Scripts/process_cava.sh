@@ -15,7 +15,7 @@ process_cava() {
             wid=$(wmctrl -l | grep ' cava' | tail -1 | cut -f1 -d' ')
             
             # Resizes and fits it in the desktop
-            wmctrl -i -r $wid -e 0,0,660,1920,420
+            wmctrl -i -r $wid -e 0,5,660,1920,420
             
             # Unmanages it on bspwm and then refreshes after
             xdotool set_window --overrideredirect 1 $wid

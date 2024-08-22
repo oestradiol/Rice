@@ -11,7 +11,7 @@ $primary: #8086e5;
 
 // Windows
 
-.eww-bar, .power, .calendar {
+.bar, .power, .calendar {
 	background-color: transparent;
 }
 
@@ -26,7 +26,7 @@ $primary: #8086e5;
 	background-color: $primary;
 	border-radius: 10px;
   padding: 3px 4px;
-  margin: 8px 8px 0px 8px;
+  margin: 0px 8px;
 }
 
 // Global button with text

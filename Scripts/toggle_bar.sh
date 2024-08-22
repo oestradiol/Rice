@@ -5,7 +5,7 @@
 # toggle_bar auto|on|off|test_fullscreen
 
 auto(){
-    (xdotool search --onlyvisible --name "Eww - eww-bar")
+    (xdotool search --onlyvisible --name "Eww - bar")
 
     if [[ $? -eq 0 ]] 
     then
@@ -16,9 +16,9 @@ auto(){
 }
 
 on(){
-    bspc config top_padding 40
+    bspc config top_padding 39
     bspc config top_monocle_padding 8
-    for wid in `xdotool search --name "Eww - eww-bar"`; 
+    for wid in `xdotool search --name "Eww - bar"`; 
     do 
         xdotool windowmap --sync $wid
     done;
@@ -27,7 +27,7 @@ on(){
 off(){
     bspc config top_padding 0
     bspc config top_monocle_padding 0
-    for wid in `xdotool search --name "Eww - eww-bar"`; 
+    for wid in `xdotool search --name "Eww - bar"`; 
     do 
         xdotool windowunmap --sync $wid
     done;

@@ -14,7 +14,7 @@ kitty -o window_padding_width=0 -o background_opacity=0 --class "kitty-cava" sh 
 ~/.bscripts/process_cava.sh &
 
 # Bar
-eww open eww-bar > /dev/null &
+eww open bar > /dev/null &
 
 # Other
 # exec trayer --edge bottom --align right --height 15 --width 15 --SetDockType true --transparent true --widthtype request --alpha 256 --margin 15 &
@@ -26,7 +26,6 @@ mantablockscreen -i $bg_img & # Using the same as the current bg
 
 # Daemons
 dunst > /dev/null 2> /dev/null &
-thunar --daemon &
 greenclip daemon &
 sxhkd -c ~/.config/bspwm/sxhkdrc > /dev/null 2> /dev/null &
 

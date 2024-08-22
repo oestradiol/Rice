@@ -10,14 +10,14 @@
 (include "./volume_revealer.yuck")
 (include "./workspaces.yuck")
 
-(defwindow eww-bar
+(defwindow bar
   :monitor 0
   :geometry (geometry :x "0%"
-              :y "0px"
+              :y "8px"
               :width "100%"
-              :height "32px"
+              :height "16px"
               :anchor "top center")
-  :class "eww-bar"
+  :class "bar"
   :stacking "bg"
   :focusable false
   :reserve (struts :distance "32px" :side "top")

@@ -50,10 +50,13 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 alias neofetch='hyfetch --ascii ~/Rice/Configs/neofetch/uwufetch'
+alias rustdesk='sudo cp /run/sddm/$(sudo ls /run/sddm) ~/.Xauthority && XAUTHORITY=/home/elaina/.Xauthority DISPLAY=:0 sudo -S rustdesk'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # source /usr/share/nvm/init-nvm.sh
+
+eval "$(starship init zsh)"
 
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
@@ -72,3 +75,6 @@ export PATH=$HOME/.ghcup/bin:$PATH
 export PATH=$HOME/Ricing/Bscripts/PathScripts:$PATH
 export PATH=$(yarn global bin):$PATH
 export PATH=$HOME/.cargo/bin/:$PATH
+
+clear
+neofetch
