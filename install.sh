@@ -88,14 +88,14 @@ ln -s -f $script_dir/Other/.face $HOME/
 echo "Done"
 
 echo -n "Changing script permissions... "
-chmod +x ~/.bscripts/*
-chmod +x ~/.config/bspwm/autostart
-chmod +x ~/.config/bspwm/bspwmrc
-chmod +x ~/.config/bspwm/quit
-chmod +x ~/.config/eww/scripts/*
+chmod +x $HOME/.bscripts/*
+chmod +x $HOME/.config/bspwm/autostart
+chmod +x $HOME/.config/bspwm/bspwmrc
+chmod +x $HOME/.config/bspwm/quit
+chmod +x $HOME/.config/eww/scripts/*
 echo "Done"
 
 echo "Install finished!"
 echo "There's no need to run this again. To update it, just run git pull."
 echo "Enjoy my rice! ~<3"
-hyfetch --ascii ~/.config/neofetch/uwufetch
+hyfetch --ascii $HOME/.config/neofetch/uwufetch

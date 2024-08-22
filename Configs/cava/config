@@ -145,12 +145,12 @@ sensitivity = 100
 [color]
 gradient = 1
 gradient_count = 6
-gradient_color_1 = '#083eab'
-gradient_color_2 = '#5525ce'
-gradient_color_3 = '#a40df1'
-gradient_color_4 = '#b50cc7'
-gradient_color_5 = '#c60b9d'
-gradient_color_6 = '#d70a74'
+gradient_color_1 = '#ef71b1'
+gradient_color_2 = '#ef70e5'
+gradient_color_3 = '#c170ef'
+gradient_color_4 = '#708aef'
+gradient_color_5 = '#70a7ef'
+gradient_color_6 = '#70c7ef'
 
 
 [smoothing]

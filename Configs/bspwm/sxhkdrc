@@ -112,7 +112,7 @@ super+b
 
 # Open file manager
 super+f
-	thunar
+  nemo	
 
 # Open terminal
 super+t

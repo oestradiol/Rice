@@ -49,11 +49,11 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-alias neofetch='hyfetch --ascii ~/Ricing/Configs/neofetch/uwufetch'
+alias neofetch='hyfetch --ascii ~/Rice/Configs/neofetch/uwufetch'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /usr/share/nvm/init-nvm.sh
+# source /usr/share/nvm/init-nvm.sh
 
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
