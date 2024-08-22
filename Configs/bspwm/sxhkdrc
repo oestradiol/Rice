@@ -1,8 +1,6 @@
 ## Ctrl + Shift
 
-# Move windows in workspace
-ctrl+shift+{w,s,a,d}
-	play -v 0.4 ~/.config/rice_assets/Sounds/tile.wav& ~/.bscripts/bsmove.sh {north,south,west,east}
+# -
 	
 
 
@@ -10,9 +8,7 @@ ctrl+shift+{w,s,a,d}
 
 ## Ctrl + Super
 
-# Select windows in workspace
-ctrl+super+{w,s,a,d}
-	~/.bscripts/bselect.sh {north,south,west,east}
+# -
 
 
 
@@ -20,8 +16,20 @@ ctrl+super+{w,s,a,d}
 
 ## Ctrl + Alt
 
+# Shrink windows
+ctrl+alt+Right
+	bspc node focused -z right -15 0
+ctrl+alt+Left
+	bspc node focused -z left 15 0
+ctrl+alt+Up
+	bspc node focused -z top 0 15
+ctrl+alt+Down
+	bspc node focused -z bottom 0 -15
+
+
+
 # Preselect direction for next window
-ctrl+alt+{w,s,a,d}
+ctrl+alt+{k,j,h,l}
 	bspc node --presel-dir \~{north,south,west,east}
 
 # Cancel preselection
@@ -34,19 +42,13 @@ ctrl+alt+space
 
 ## Super + Shift
 
-# Grow windows
-super+shift+d
-	bspc node focused -z right 15 0
-super+shift+a
-	bspc node focused -z left -15 0
-super+shift+w
-	bspc node focused -z top 0 -15
-super+shift+s
-	bspc node focused -z bottom 0 15
-
 # Move window to the next/previous workspace
 super+shift+{q,e}
 	~/.bscripts/move_windows.sh move {-1,+1}
+
+# Move windows in workspace
+super+shift+{k,j,h,l}
+	play -v 0.4 ~/.config/rice_assets/Sounds/tile.wav& ~/.bscripts/bsmove.sh {north,south,west,east}
 
 
 
@@ -62,15 +64,19 @@ super+shift+{q,e}
 
 ## Alt + Shift
 
-# Shrink windows
-alt+shift+d
-	bspc node focused -z right -15 0
-alt+shift+a
-	bspc node focused -z left 15 0
-alt+shift+w
-	bspc node focused -z top 0 15
-alt+shift+s
-	bspc node focused -z bottom 0 -15
+# Grow windows
+alt+shift+Right
+	bspc node focused -z right 15 0
+alt+shift+Left
+	bspc node focused -z left -15 0
+alt+shift+Up
+	bspc node focused -z top 0 -15
+alt+shift+Down
+	bspc node focused -z bottom 0 15
+
+# Select windows in workspace
+alt+shift+{k,j,h,l}
+	~/.bscripts/bselect.sh {north,south,west,east}
 
 # Go to the next workspace
 alt+shift+{q,e}
@@ -162,11 +168,11 @@ super+Print
     sleep 3 && ~/.bscripts/ss.sh
 
 # Rofi open emoji selector
-super + period
+super+period
     ~/.bscripts/rofi.sh emoji
 
 # Rofi open clipboard history
-super + v
+super+v
     ~/.bscripts/rofi.sh clipboard
 
 
@@ -195,13 +201,13 @@ alt+a
 alt+s
     bspc desktop focused --layout next
 
-# Toggle floating windows
-alt+f
-	~/.bscripts/toggle_winprops.sh float
-
 # Toggle fullscreen
-alt+g
+alt+f
 	~/.bscripts/toggle_winprops.sh fullscreen
+
+# Toggle floating windows
+alt+g
+	~/.bscripts/toggle_winprops.sh float
 
 # Cycle through window layers (above, normal or below)
 alt+h
@@ -210,10 +216,6 @@ alt+h
 # Eww toggle bar 
 alt+b
 	~/.bscripts/toggle_bar.sh auto
-
-# Eww music popup
-alt+m
-	~/.config/eww/mybar/scripts/popup_music
 
 # Toggle picom
 # alt+p

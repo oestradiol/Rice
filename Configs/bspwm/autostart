@@ -35,3 +35,6 @@ sxhkd -c ~/.config/bspwm/sxhkdrc > /dev/null 2> /dev/null &
 
 # Autosuspend
 ~/.bscripts/idle.sh > /dev/null 2> /dev/null &
+
+# Set keyboard key repeat rate
+xset r rate 200 50

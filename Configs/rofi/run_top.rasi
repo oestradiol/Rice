@@ -1,7 +1,7 @@
 configuration {
   location: 1;
   xoffset: 15;
-  yoffset: 50;
+  yoffset: 48;
 }
 
 @theme "~/.config/rofi/run_base.rasi"

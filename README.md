@@ -17,7 +17,7 @@ _**Disclaimer:** I did not test this on another machine after I finished it on m
 
 Just run this for this section (assuming you use yay):
 ```
-yay -Sy bspwm cava colorpicker dunst eww flameshot hyfetch kitty komorebi lxappearance mantablockscreen picom playerctl rofi rofi-emoji rofi-greenclip rose-pine-gtk-theme sox sxhkd ttf-cousine-nerd ttf-work-sans ttf-fantasque-nerd ttc-iosevka-curly ttf-cascadia-code-nerd wmctrl xclip xdotool --needed
+yay -Sy --needed bspwm cava colorpicker dunst eww flameshot hyfetch kitty komorebi gst-libav gst-plugins-good lxappearance mantablockscreen picom-ftlabs-git playerctl rofi rofi-emoji rofi-greenclip rose-pine-gtk-theme sox sxhkd noto-fonts-emoji ttf-cousine-nerd ttf-work-sans ttf-fantasque-nerd ttc-iosevka-curly ttf-cascadia-code-nerd wmctrl xclip xdotool qt5ct
 ```
 If you're not using arch, this is the dependency list, install in wathever way you want:
 - bspwm - Window manager
@@ -29,11 +29,13 @@ If you're not using arch, this is the dependency list, install in wathever way y
 - hyfetch - Colored LGBT+ neofetch
 - kitty - Terminal
 - komorebi - Video background, can be substituted for feh if you don't want that, can be quite heavy 
+- gst-libav - Komorebi dependency for video bgs
+- gst-plugins-good - Komorebi dependency for video bgs
 - lxappearance - Theming
+- qt5ct - Theming
 - rose-pine-gtk-theme - Theming
 - mantablockscreen - Lock screen
-- picom - Compositor
-<br>**Obs.:** There is a cool picom fork called 'picom-ftlabs'. It is what I am using, so please tell me if something breaks with the default one.
+- picom-ftlabs-git - Compositor
 - playerctl - Media controller
 - rofi - Menus
 - rofi-emoji - Emoji picker menu
@@ -58,9 +60,14 @@ chmod +x install.sh
 _Disclaimer: While this script does attempt to create a backup of all files that will be rewritten and asks what to do when a backup already exists, I do not take responsibility for any lost config files as consequence of running this script. You are strongly advised to read the insides of the script before running._
 
 Besides that, there are a few things to notice:
-1. The profile picture shown in the lockscreen can be changed by putting the desired image in `~/.face`. <br>
+1. The profile picture shown in the lockscreen can be changed by putting the desired image in `Rice/Other/.face`. <br>
 2. If you wanna use the neofetch like I did, just add this to your .bashrc, .zshrc or whatever: `alias neofetch='hyfetch --ascii ~/Ricing/Configs/neofetch/uwufetch'`. You can also change the ASCII in that file if you want. <br>
 3. The neofetch has the CPU and GPU info hardcoded to load faster. Remember to update it with your info!
+4. A few other recommended fonts for more compatibility:
+  - ttf-dejavu
+  - ttf-hack
+  - ttf-liberation
+  - ttf-nerd-fonts-symbols
 
 The install script should do the following changes to your files:
 1. Move every file/folder that will be changed to `Old_Rice` (in the same folder as the repo) in an attempt to create a backup
@@ -69,14 +76,18 @@ The install script should do the following changes to your files:
 4. Link `Scripts` to `~/.bscripts`
 6. Copy every font at `~/.local/share/fonts/` to `Fonts`
 7. Link `Fonts` to `~/.local/share/fonts`
-8. Change permissions of all scripts in the repo to be executable
+8. Move and Link, if exists, your .zshrc and your .face; Otherwise, it'll use the default ones at the "Other" folder
+9. Change permissions of all scripts in the repo to be executable
 
 Additional steps for configuring the Gtk theme:
 1. Run `lxappearance`
 2. Select "rose-pine-moon-gtk" in the widgets section 
+3. Run `qt5ct`
+4-1. Configure it as you like (I haven't really added anything in the Rice for this but I think it's important so decided to put here anyways)
+4-2. I recommend using Catpuccin Mocha or some theme like that
 
 ## Updating
 Since the install script now uses symbolic links instead of copied files, all you have to do to update your configs to the latest version is to update the repo with `git pull`.
 
 ## Keybinds
-These are many keybinds set in the `~/.config/bspwm/sxhkdrc` file. If you are gonna use this, I strongly recommend that you change those for your own or at least take your time to thorougly study the more important ones.
+These are many keybinds set in the `~/.config/bspwm/sxhkdrc` file. If you are gonna use this, I strongly recommend that you change those for your own or at least take your time to thorougly study the most important ones.
