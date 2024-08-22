@@ -1,0 +1,42 @@
+#!/usr/bin/env sh
+
+# Define color codes for each status
+declare -A COLORS=(
+    [V]='#FF5733'  # Color for 'vacant'
+    [H]='#FF5733'  # Color for 'hidden'
+    [S]='#FF5733'  # Color for 'sticky'
+    [P]='#FF5733'  # Color for 'private'
+    [L]='#FF5733'  # Color for 'locked'
+    [M]='#FF5733'  # Color for 'marked'
+    [F]='#808080'  # Grey for false
+)
+sep="⬤" # Use a Unicode circle character
+
+# Iterate through the keys of the COLORS associative array
+keys=()
+for key in "${!COLORS[@]}"; do
+    keys+=("$key")
+done
+
+# Subscribe to BSPWM events
+bspc subscribe report | while read -r line; do
+    # Get the info of the focused node
+    focused_info=$(bspc query -T -m -d -n focused)
+
+    # Use jq to extract the node flags from focused_info
+    flags=$(echo "$focused_info" | jq -r '.vacant, .hidden, .sticky, .private, .locked, .marked' | tr -d '\n' | sed 's/true/T/g; s/false/F/g')
+
+    # Parse the flags
+    formatted_output=""
+    last=${#flags}-1
+    for ((i=0; i<${last}; i++)); do
+        color="${COLORS[$(if [ "${flags:i:1}" == "T" ]; then echo "${keys[i]}"; else echo "F"; fi)]}"
+        formatted_output+="%{F$color}$sep "
+    done
+    color="${COLORS[$(if [ "${flags:last:1}" == "T" ]; then echo "${keys[last]}"; else echo "F"; fi)]}"
+    formatted_output+="%{F$color}$sep"
+    formatted_output+="%{F-}"
+
+    # Update the Polybar module
+    echo $formatted_output
+done

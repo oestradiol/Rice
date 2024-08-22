@@ -1,8 +1,5 @@
-$white: #ffffff;
-$violet-dark: #2c0223;
-$blue-alt: #5294ff;
-$purple-alt: #dda2ff;
-$red-alt: #fcb1d7;
+$content: #ffffff;
+$primary: #8086e5;
 
 * {
 	font-family: "Work Sans", "Cousine Nerd Font", serif;
@@ -20,28 +17,29 @@ $red-alt: #fcb1d7;
 
 // Global container
 
-.container {
-	margin: 12px 2.5px;
-	padding: 5px 5px;
-	background-color: $violet-dark;
-	border-radius: 10px;
+.center-box {
+  margin: 0px;
 }
 
-.center-box {
-    margin: 0px 15px 15px 15px;
+.container {
+  font-size: 11pt;
+	background-color: $primary;
+	border-radius: 10px;
+  padding: 3px 4px;
+  margin: 8px 8px 0px 8px;
 }
 
 // Global button with text
 
 .text-button, calendar {
   padding: 1px 6px 1px 3px;
-  background-color: $violet-dark;
+  background-color: transparent;
 }
 
 // Volume & Media Revealer
 
 .volume-revealer, .media-revealer {
-	background-color: $violet-dark;
+	background-color: $primary;
 	padding: 0px 9px 0px 6px;
 	revealer box {
 		label {
@@ -59,28 +57,31 @@ $red-alt: #fcb1d7;
 .blob {
 	margin: 0px 2.5px;
 	padding: 0px 2.5px;
-	color: $violet-dark;
+	color: $primary;
 	border-radius: 5px;
 }
 
 .disk {
-	background-color: $blue-alt;
+	color: $content;
+	background-color: #ae52da;
 }
 
 .temperature  {
-	background-color: $purple-alt;
+	color: $content;
+	background-color: #f065f5;
 }
 
 .memory  {
-	background-color: $red-alt;
+	color: $content;
+	background-color: #ff80d9;
 }
 
 // Font
 
 .large-font {
-	font-size: 12pt;
+	font-size: 13pt;
 }
 
 .text-and-icons {
-	color: $white;
+	color: $content;
 }

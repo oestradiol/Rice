@@ -17,6 +17,7 @@ auto(){
 
 on(){
     bspc config top_padding 40
+    bspc config top_monocle_padding 8
     for wid in `xdotool search --name "Eww - eww-bar"`; 
     do 
         xdotool windowmap --sync $wid
@@ -25,6 +26,7 @@ on(){
 
 off(){
     bspc config top_padding 0
+    bspc config top_monocle_padding 0
     for wid in `xdotool search --name "Eww - eww-bar"`; 
     do 
         xdotool windowunmap --sync $wid
